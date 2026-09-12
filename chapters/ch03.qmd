@@ -226,27 +226,27 @@ acos(cos_theta) * 180 / pi   # 도 단위
 use wage1.dta, clear
 
 regress lwage educ exper
-predict yhat, xb
-predict uhat, resid
+predict double yhat, xb      // double 필수: 기본 float 는 정밀도가 모자라
+predict double uhat, resid   //   직교성이 0 으로 안 찍힙니다
 ```
 
 **(1) 잔차는 모든 설명변수와 직교하는가?**
 
 ```stata
 * 각 설명변수와의 내적, 그리고 잔차의 합(= 상수항과의 내적)
-generate prod_educ  = educ  * uhat
-generate prod_exper = exper * uhat
+generate double prod_educ  = educ  * uhat
+generate double prod_exper = exper * uhat
 
 quietly total uhat prod_educ prod_exper
 matrix D = e(b)
 
-display "상수항 : " %14.10f D[1,1]
-display "educ   : " %14.10f D[1,2]
-display "exper  : " %14.10f D[1,3]
+display "상수항 : " %14.6e D[1,1]
+display "educ   : " %14.6e D[1,2]
+display "exper  : " %14.6e D[1,3]
 ```
 
-세 값 모두 0입니다 (부동소수점 오차 수준). 상수항과의 직교가 곧
-**잔차의 합이 0**이라는 뜻입니다.
+세 값 모두 0입니다 — 정확히는 $10^{-10}$ 수준으로, 다루는 숫자의 크기에 비하면
+0입니다. 상수항과의 직교가 곧 **잔차의 합이 0**이라는 뜻입니다.
 
 **(2) 피타고라스 정리가 성립하는가?**
 
@@ -254,9 +254,9 @@ display "exper  : " %14.10f D[1,3]
 quietly summarize lwage
 scalar ybar = r(mean)
 
-generate dy  = (lwage - ybar)^2
-generate dyh = (yhat  - ybar)^2
-generate du  = uhat^2
+generate double dy  = (lwage - ybar)^2
+generate double dyh = (yhat  - ybar)^2
+generate double du  = uhat^2
 
 quietly total dy dyh du
 matrix T = e(b)

@@ -36,7 +36,7 @@ Wooldridge는 좋은 교재지만, 학부용이라 결정적인 자리마다 "it
 | | 장 | 상태 |
 |---|---|---|
 | [ch01](chapters/ch01.qmd) | 계량경제학의 성격과 경제 자료 | 준비 중 |
-| [ch02](chapters/ch02.qmd) | 단순회귀모형 | 준비 중 |
+| [ch02](chapters/ch02.qmd) | **단순회귀모형** | ✅ 설명 (코드 예정) |
 | [ch03](chapters/ch03.qmd) | **다중회귀분석: 추정** | ✅ |
 | [ch04](chapters/ch04.qmd) | 다중회귀분석: 추론 | 준비 중 |
 | [ch05](chapters/ch05.qmd) | 다중회귀분석: OLS의 점근적 성질 | 준비 중 |
