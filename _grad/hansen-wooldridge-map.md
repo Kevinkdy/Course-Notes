@@ -1,6 +1,5 @@
----
-title: "Hansen ↔ Wooldridge 대응표"
----
+# Hansen ↔ Wooldridge 대응표
+
 
 이 노트의 설계 원리는 하나입니다.
 
@@ -10,22 +9,22 @@ Hansen은 엄밀하지만 학부생이 읽기 어렵고, Wooldridge는 읽히지
 "it can be shown that"으로 넘어갑니다. 아래 표는 **Wooldridge가 넘어간 자리**와
 **Hansen이 그 자리를 채워주는 위치**를 짝지은 것입니다.
 
-::: {.callout-warning}
-Hansen의 장 번호는 판본(2000년대 초 초안 ~ Princeton 2022년판)에 따라 다릅니다.
-아래는 최근 판본 기준이며, 다른 판본을 쓴다면 **장 제목으로** 찾아가세요.
-:::
+> [!WARNING]
+> Hansen의 장 번호는 판본(2000년대 초 초안 ~ Princeton 2022년판)에 따라 다릅니다.
+> 아래는 최근 판본 기준이며, 다른 판본을 쓴다면 **장 제목으로** 찾아가세요.
+
 
 ## 대응표
 
 | Wooldridge 7e | 넘어간 자리 | Hansen | 이 노트 |
 |---|---|---|---|
 | 2.1 단순회귀모형 | $E(u\mid x)=0$ 이 정확히 무엇을 요구하는가 | Conditional Expectation and Projection | 예정 |
-| 2.2 OLS 추정 | 왜 제곱합인가, 직교의 의미 | The Algebra of Least Squares | [OLS를 그림으로 보기](../notes/ch03-ols-geometry.qmd) ✅ |
+| 2.2 OLS 추정 | 왜 제곱합인가, 직교의 의미 | The Algebra of Least Squares | [OLS를 그림으로 보기](../notes/ch03-ols-geometry.md) ✅ |
 | 3.2 다중회귀 OLS | "다른 조건이 같다면"의 정확한 의미 (FWL) | The Algebra of Least Squares | 같은 절 ✅ |
 | 3.3 생략변수 편향 | 편향의 부호를 판단하는 법 | Least Squares Regression | 예정 |
 | 3.4 OLS의 분산 | 다중공선성이 왜 분산만 키우는가 | Least Squares Regression | 같은 절(부분) ✅ |
 | 3.5 Gauss–Markov | "BLUE"에서 L과 B가 각각 무슨 뜻인가 | Least Squares Regression | 예정 |
-| 4.2 t검정 | 자유도가 왜 $n-k-1$ 인가 | Normal Regression / Algebra of LS | [행렬로 보기](../notes/ch03-ols-geometry.qmd#sec-further) ✅ |
+| 4.2 t검정 | 자유도가 왜 $n-k-1$ 인가 | Normal Regression / Algebra of LS | [행렬로 보기](../../chapters/ch03.md) ✅ |
 | 4.5 F검정 | 제약회귀와의 관계 | Restricted Estimation | 예정 |
 | 5장 점근이론 | 불편성과 일치성은 왜 다른 이야기인가 | Asymptotic Theory for Least Squares | 예정 |
 | 6.3 조정 $R^2$ | $R^2$ 가 왜 기계적으로 오르는가 | The Algebra of Least Squares | 같은 절(부분) ✅ |

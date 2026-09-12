@@ -1,7 +1,1 @@
-_book/
-.quarto/
-_freeze/
-.Rproj.user/
-.Rhistory
-*.Rproj
 .DS_Store
