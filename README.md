@@ -80,10 +80,10 @@ Wooldridge는 좋은 교재지만, 학부용이라 결정적인 자리마다 "it
 
 **SSE와 SSR은 교재마다 정반대입니다.**
 
-| | Wooldridge 7e (이 노트) | 통계학 계열 교재 |
-|---|---|---|
-| 설명된 제곱합 | **SSE** (Explained) | SSR (Regression) |
-| 잔차제곱합 | **SSR** (Residuals) | SSE (Error) |
+| | Wooldridge 7e (이 노트) | 통계학 교재 (ANOVA) | 통계 패키지 (SAS 등) |
+|---|---|---|---|
+| 설명된 제곱합 | **SSE** (Explained) | SSR (Regression) | SSM (Model) |
+| 잔차제곱합 | **SSR** (Residuals) | SSE (Error) | SSE (Error) |
 
 **시험과 과제에서는 반드시 수업에서 지정한 교재의 표기를 쓰십시오.**
 자세한 내용은 [들어가며](index.md)의 「표기 규약」 참조.

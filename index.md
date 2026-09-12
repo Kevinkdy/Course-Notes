@@ -61,8 +61,8 @@ Wooldridge의 『Introductory Econometrics: A Modern Approach』(7판)는 훌륭
 
 | 개념 | Wooldridge 7e | 다른 교재에서는 | 주의 |
 |---|---|---|---|
-| 설명된 제곱합 | **SSE** (Explained) | 통계학 교재의 SSE는 **Error**(잔차) | **정반대** |
-| 잔차제곱합 | **SSR** (Residuals) | 통계학 교재의 SSR은 **Regression**(설명된) | **정반대** |
+| 설명된 제곱합 | **SSE** (Explained) | 통계학 교재의 SSE는 **Error**(잔차) / SSM(Model) 표기도 있음 | **정반대** |
+| 잔차제곱합 | **SSR** (Residuals) | 통계학 교재의 SSR은 **Regression**(설명된), SSE(Error)로도 씀 | **정반대** |
 | 총제곱합 | SST | TSS | 같은 뜻 |
 | 설명변수 개수 $k$ | 상수항 **제외** → 자유도 $n-k-1$ | 상수항을 **포함**하는 교재도 많음 → $n-k$ | 정의 차이 |
 | 오차항 | $u$ | $\varepsilon$ 또는 $e$ | 같은 뜻 |
