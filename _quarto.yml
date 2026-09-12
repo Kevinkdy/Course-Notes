@@ -1,0 +1,65 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "계량경제학 보충 노트"
+  subtitle: "학부 계량경제학 · Wooldridge 7판 보충"
+  author: "Kevin Kim"
+  lang: ko
+  date: last-modified
+  search: true
+  repo-url: https://github.com/Kevinkdy/Econometrics
+  repo-actions: [edit, issue]
+  page-footer:
+    left: "Wooldridge, *Introductory Econometrics: A Modern Approach* 7e 기준"
+  chapters:
+    - index.qmd
+    - part: "1부 · 횡단면 자료의 회귀분석"
+      chapters:
+        - chapters/ch01.qmd
+        - chapters/ch02.qmd
+        - chapters/ch03.qmd
+        - chapters/ch04.qmd
+        - chapters/ch05.qmd
+        - chapters/ch06.qmd
+        - chapters/ch07.qmd
+        - chapters/ch08.qmd
+        - chapters/ch09.qmd
+    - part: "2부 · 시계열 자료의 회귀분석"
+      chapters:
+        - chapters/ch10.qmd
+        - chapters/ch11.qmd
+        - chapters/ch12.qmd
+    - part: "3부 · 고급 주제"
+      chapters:
+        - chapters/ch13.qmd
+        - chapters/ch14.qmd
+        - chapters/ch15.qmd
+        - chapters/ch16.qmd
+        - chapters/ch17.qmd
+        - chapters/ch18.qmd
+        - chapters/ch19.qmd
+  appendices:
+    - reference/roadmap.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: false      # 장 번호는 제목에 직접 씀 (교재와 일치시키기 위해)
+    code-copy: true
+    df-print: kable
+    fig-align: center
+    mainfont: "Pretendard, -apple-system, sans-serif"
+
+crossref:
+  eq-prefix: 식
+
+execute:
+  freeze: auto
+  warning: false
+  message: false
+
+bibliography: reference/references.bib

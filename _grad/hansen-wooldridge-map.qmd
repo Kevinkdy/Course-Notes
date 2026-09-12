@@ -1,0 +1,58 @@
+---
+title: "Hansen ↔ Wooldridge 대응표"
+---
+
+이 노트의 설계 원리는 하나입니다.
+
+> **Hansen의 수학적 내용을, Wooldridge의 순서와 눈높이로 풀어쓴다.**
+
+Hansen은 엄밀하지만 학부생이 읽기 어렵고, Wooldridge는 읽히지만 결정적인 곳에서
+"it can be shown that"으로 넘어갑니다. 아래 표는 **Wooldridge가 넘어간 자리**와
+**Hansen이 그 자리를 채워주는 위치**를 짝지은 것입니다.
+
+::: {.callout-warning}
+Hansen의 장 번호는 판본(2000년대 초 초안 ~ Princeton 2022년판)에 따라 다릅니다.
+아래는 최근 판본 기준이며, 다른 판본을 쓴다면 **장 제목으로** 찾아가세요.
+:::
+
+## 대응표
+
+| Wooldridge 7e | 넘어간 자리 | Hansen | 이 노트 |
+|---|---|---|---|
+| 2.1 단순회귀모형 | $E(u\mid x)=0$ 이 정확히 무엇을 요구하는가 | Conditional Expectation and Projection | 예정 |
+| 2.2 OLS 추정 | 왜 제곱합인가, 직교의 의미 | The Algebra of Least Squares | [OLS를 그림으로 보기](../notes/ch03-ols-geometry.qmd) ✅ |
+| 3.2 다중회귀 OLS | "다른 조건이 같다면"의 정확한 의미 (FWL) | The Algebra of Least Squares | 같은 절 ✅ |
+| 3.3 생략변수 편향 | 편향의 부호를 판단하는 법 | Least Squares Regression | 예정 |
+| 3.4 OLS의 분산 | 다중공선성이 왜 분산만 키우는가 | Least Squares Regression | 같은 절(부분) ✅ |
+| 3.5 Gauss–Markov | "BLUE"에서 L과 B가 각각 무슨 뜻인가 | Least Squares Regression | 예정 |
+| 4.2 t검정 | 자유도가 왜 $n-k-1$ 인가 | Normal Regression / Algebra of LS | [행렬로 보기](../notes/ch03-ols-geometry.qmd#sec-further) ✅ |
+| 4.5 F검정 | 제약회귀와의 관계 | Restricted Estimation | 예정 |
+| 5장 점근이론 | 불편성과 일치성은 왜 다른 이야기인가 | Asymptotic Theory for Least Squares | 예정 |
+| 6.3 조정 $R^2$ | $R^2$ 가 왜 기계적으로 오르는가 | The Algebra of Least Squares | 같은 절(부분) ✅ |
+| 7장 더미변수 | 상호작용항·로그 계수 해석 | Regression Extensions | 예정 |
+| 8장 이분산 | 왜 강건표준오차가 '기본'인가 (샌드위치) | Least Squares Regression (robust s.e.) | 예정 |
+| 13–14장 패널 | FE = 집단내변환 = LSDV 가 왜 같은가 | Panel Data | 예정 |
+| 15장 IV | 도구변수 두 조건의 의미, 약한 도구변수 | Instrumental Variables | 예정 |
+| 부록 D·E | 본문에서 쓰지 않고 부록으로 밀어낸 행렬대수 | 책 전체의 기본 언어 | 각 절의 "행렬로 보기" 블록 |
+
+## 서술 원칙
+
+Hansen을 그대로 옮기면 안 됩니다. 다음 세 가지를 지킵니다.
+
+1. **일반성을 포기한다.** Hansen은 임의의 $n$, $k$ 로 씁니다. 여기서는 먼저
+   $n=3$, $k=2$ 로 고정해 **그림이 그려지는 상태**로 보여주고, "이 논리는 $n$ 이
+   몇이든 같다"를 한 줄 덧붙입니다.
+2. **행렬은 접어둔다.** 본문은 스칼라와 그림으로 끝내고, 행렬 전개는
+   `::: {.callout-note collapse="true"}` 안에 넣습니다. 학부생은 펴지 않고도
+   읽히고, 대학원생은 펴서 읽습니다.
+3. **항상 숫자로 확인한다.** 모든 주장은 R과 Stata에서 실행해 화면에 값이
+   찍히는 것으로 끝냅니다. "공식이 그렇다더라"로 끝내지 않습니다.
+
+## 참고문헌
+
+- Wooldridge, J. M. *Introductory Econometrics: A Modern Approach*, 7th ed. — 기본 교재
+- Hansen, B. E. *Econometrics*. Princeton University Press.
+  초안 PDF: <https://www.ssc.wisc.edu/~bhansen/econometrics/>
+- Wooldridge, J. M. *Econometric Analysis of Cross Section and Panel Data*, 2nd ed.
+  — 같은 저자의 대학원판. 표기가 7판과 일관되어 다리 놓기에 안전합니다.
+- 한치록, 『계량경제학강의』 — 한국어 용어의 기준

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="424" viewBox="0 0 680 424" role="img" font-family="Pretendard, -apple-system, 'Helvetica Neue', sans-serif">
+  <title>OLS의 기하학적 해석: 관측치 공간에서의 직교사영</title>
+  <desc>y 벡터가 X의 열들이 만드는 평면 위로 수직으로 내려와 ŷ이 되고, 그 차이인 잔차 벡터 û이 평면과 직교하는 그림</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- 범례 -->
+  <line x1="50" y1="58" x2="70" y2="58" stroke="#6B4FBB" stroke-width="2"/>
+  <text x="78" y="63" font-size="14" fill="#6B4FBB">y — 관측된 종속변수 벡터</text>
+  <line x1="50" y1="82" x2="70" y2="82" stroke="#1A6FC4" stroke-width="2"/>
+  <text x="78" y="87" font-size="14" fill="#1A6FC4">ŷ — X로 만들 수 있는, y에 가장 가까운 점</text>
+  <line x1="50" y1="106" x2="70" y2="106" stroke="#C4462C" stroke-width="2"/>
+  <text x="78" y="111" font-size="14" fill="#C4462C">û — y 빼기 ŷ, 평면과 직교</text>
+
+  <!-- col(X) 평면 -->
+  <polygon points="80,310 410,370 630,280 300,220" fill="#6B7280" fill-opacity="0.10" stroke="#9CA3AF" stroke-width="0.5"/>
+
+  <!-- 설명변수 벡터 -->
+  <line x1="200" y1="300" x2="348" y2="239" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="200" y1="300" x2="400" y2="336" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="356" y="234" font-size="14" fill="#6B7280">x₁</text>
+  <text x="408" y="346" font-size="14" fill="#6B7280">x₂</text>
+
+  <!-- y, ŷ, û -->
+  <line x1="200" y1="300" x2="470" y2="135" stroke="#6B4FBB" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="200" y1="300" x2="470" y2="290" stroke="#1A6FC4" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="470" y1="290" x2="470" y2="135" stroke="#C4462C" stroke-width="2"/>
+
+  <!-- 직각 표시 -->
+  <path d="M470,290 L454,290.6 L454,274.6 L470,274" fill="none" stroke="#6B7280" stroke-width="0.8"/>
+
+  <!-- 원점 및 라벨 -->
+  <circle cx="200" cy="300" r="3" fill="#111827"/>
+  <text x="180" y="317" font-size="14" fill="#111827">O</text>
+  <text x="322" y="206" font-size="14" font-weight="500" fill="#6B4FBB">y</text>
+  <text x="306" y="284" font-size="14" font-weight="500" fill="#1A6FC4">ŷ = Xβ̂</text>
+  <text x="484" y="217" font-size="14" font-weight="500" fill="#C4462C">û</text>
+
+  <!-- 평면 라벨 -->
+  <line x1="160" y1="390" x2="160" y2="330" stroke="#9CA3AF" stroke-width="0.5" stroke-dasharray="3 3"/>
+  <text x="50" y="405" font-size="12" fill="#6B7280">col(X) — x₁과 x₂의 모든 선형결합이 만드는 평면</text>
+</svg>
