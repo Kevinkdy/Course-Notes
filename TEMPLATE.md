@@ -1,6 +1,6 @@
 # N장 · 제목
 
-<!-- 새 장을 쓸 때 이 파일을 chapters/chNN.md 로 복사해서 시작하세요. -->
+<!-- 새 장을 쓸 때 이 파일을 Econometrics/chapters/chNN.md 로 복사해서 시작하세요. -->
 
 > [!NOTE]
 > **교재 대응**

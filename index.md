@@ -60,7 +60,7 @@ Wooldridge의 『Introductory Econometrics: A Modern Approach』(7판)는 훌륭
 - ✗ "다른 모든 조건이 동일할 때…" — 모형에 넣지 않은 변수는 고정되지 않습니다
 - ✗ "교육이 임금을 8.3% 올린다" — 조건이 빠졌습니다
 
-자세한 내용은 [2장](chapters/ch02.md)의 「계수 해석에는 반드시 "다른 조건들이
+자세한 내용은 [2장](Econometrics/chapters/ch02.md)의 「계수 해석에는 반드시 "다른 조건들이
 동일할 때"를 붙입니다」 참조.
 
 ### 특히 조심할 것

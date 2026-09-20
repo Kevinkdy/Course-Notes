@@ -37,44 +37,44 @@ Wooldridge는 좋은 교재지만, 학부용이라 결정적인 자리마다 "it
 
 | | 장 | 상태 |
 |---|---|---|
-| [ch01](chapters/ch01.md) | **계량경제학의 성격과 준비물** | ✅ 설명 + 공식 모음 |
-| [ch02](chapters/ch02.md) | **단순회귀모형** | ✅ 설명 + 유도 |
-| [ch03](chapters/ch03.md) | **다중회귀분석: 추정** | ✅ 설명 + 코드 |
-| [ch04](chapters/ch04.md) | 다중회귀분석: 추론 | 준비 중 |
-| [ch05](chapters/ch05.md) | 다중회귀분석: OLS의 점근적 성질 | 준비 중 |
-| [ch06](chapters/ch06.md) | 다중회귀분석: 추가적인 문제들 | 준비 중 |
-| [ch07](chapters/ch07.md) | 질적 정보를 포함한 다중회귀분석 | 준비 중 |
-| [ch08](chapters/ch08.md) | 이분산 | 준비 중 |
-| [ch09](chapters/ch09.md) | 모형설정과 자료 문제 | 준비 중 |
+| [ch01](Econometrics/chapters/ch01.md) | **계량경제학의 성격과 준비물** | ✅ 설명 + 공식 모음 |
+| [ch02](Econometrics/chapters/ch02.md) | **단순회귀모형** | ✅ 설명 + 유도 |
+| [ch03](Econometrics/chapters/ch03.md) | **다중회귀분석: 추정** | ✅ 설명 + 코드 |
+| [ch04](Econometrics/chapters/ch04.md) | 다중회귀분석: 추론 | 준비 중 |
+| [ch05](Econometrics/chapters/ch05.md) | 다중회귀분석: OLS의 점근적 성질 | 준비 중 |
+| [ch06](Econometrics/chapters/ch06.md) | 다중회귀분석: 추가적인 문제들 | 준비 중 |
+| [ch07](Econometrics/chapters/ch07.md) | 질적 정보를 포함한 다중회귀분석 | 준비 중 |
+| [ch08](Econometrics/chapters/ch08.md) | 이분산 | 준비 중 |
+| [ch09](Econometrics/chapters/ch09.md) | 모형설정과 자료 문제 | 준비 중 |
 
 ### 2부 · 시계열 자료의 회귀분석
 
 | | 장 | 상태 |
 |---|---|---|
-| [ch10](chapters/ch10.md) | 시계열 자료를 이용한 기본적 회귀분석 | 준비 중 |
-| [ch11](chapters/ch11.md) | 시계열 자료에 OLS를 사용할 때의 추가 문제 | 준비 중 |
-| [ch12](chapters/ch12.md) | 시계열 회귀에서의 계열상관과 이분산 | 준비 중 |
+| [ch10](Econometrics/chapters/ch10.md) | 시계열 자료를 이용한 기본적 회귀분석 | 준비 중 |
+| [ch11](Econometrics/chapters/ch11.md) | 시계열 자료에 OLS를 사용할 때의 추가 문제 | 준비 중 |
+| [ch12](Econometrics/chapters/ch12.md) | 시계열 회귀에서의 계열상관과 이분산 | 준비 중 |
 
 ### 3부 · 고급 주제
 
 | | 장 | 상태 |
 |---|---|---|
-| [ch13](chapters/ch13.md) | 시간에 걸친 횡단면 자료의 결합 | 준비 중 |
-| [ch14](chapters/ch14.md) | 고급 패널 자료 기법 | 준비 중 |
-| [ch15](chapters/ch15.md) | 도구변수 추정과 2SLS | 준비 중 |
-| [ch16](chapters/ch16.md) | 연립방정식 모형 | 준비 중 |
-| [ch17](chapters/ch17.md) | 제한종속변수 모형과 표본선택 보정 | 준비 중 |
-| [ch18](chapters/ch18.md) | 고급 시계열 주제 | 준비 중 |
-| [ch19](chapters/ch19.md) | 실증분석 프로젝트 수행하기 | 준비 중 |
+| [ch13](Econometrics/chapters/ch13.md) | 시간에 걸친 횡단면 자료의 결합 | 준비 중 |
+| [ch14](Econometrics/chapters/ch14.md) | 고급 패널 자료 기법 | 준비 중 |
+| [ch15](Econometrics/chapters/ch15.md) | 도구변수 추정과 2SLS | 준비 중 |
+| [ch16](Econometrics/chapters/ch16.md) | 연립방정식 모형 | 준비 중 |
+| [ch17](Econometrics/chapters/ch17.md) | 제한종속변수 모형과 표본선택 보정 | 준비 중 |
+| [ch18](Econometrics/chapters/ch18.md) | 고급 시계열 주제 | 준비 중 |
+| [ch19](Econometrics/chapters/ch19.md) | 실증분석 프로젝트 수행하기 | 준비 중 |
 
-우선순위는 [다룰 내용](reference/roadmap.md) 참조.
+우선순위는 [다룰 내용](Econometrics/reference/roadmap.md) 참조.
 
 ## 각 장의 구성
 
 1. 교재 대응 → 2. 강의에서 막히는 지점 → 3. 직관 → 4. 수식 →
 5. 숫자로 확인하기 (R / Stata) → 6. 흔한 오해 → 7. 연습문제
 
-새 장은 [`TEMPLATE.md`](_template.md)를 `chapters/chNN.md`로 복사해서 시작합니다.
+새 장은 [`TEMPLATE.md`](TEMPLATE.md)를 `Econometrics/chapters/chNN.md`로 복사해서 시작합니다.
 
 ## 표기 주의
 
@@ -98,11 +98,11 @@ Wooldridge는 좋은 교재지만, 학부용이라 결정적인 자리마다 "it
 ## 폴더 구조
 
 ```
-chapters/     교재 한 장 = 파일 하나 (ch01.md ~ ch19.md)
-figures/      그림
-reference/    작성 로드맵
+Econometrics/chapters/     교재 한 장 = 파일 하나 (ch01.md ~ ch19.md)
+Econometrics/figures/      그림
+Econometrics/reference/    작성 로드맵
 TEMPLATE.md   새 장 작성용 템플릿
-_grad/        대학원용 초안 (보류 — 추후 작업)
+Econometrics/_grad/        대학원용 초안 (보류 — 추후 작업)
 index.md      들어가며 · 표기 규약
 ```
 
