@@ -3,6 +3,561 @@
 > 기준 교재: Donald L. Cohn, *Measure Theory*, 2nd ed.
 > 우선 학습 범위: §§1.1-1.2, 2.1-2.4, 2.6, 3.1, 5.1-5.2, 10.1
 
+> [!IMPORTANT]
+> 아래 내용은 이 노트를 읽기 전에 반드시 먼저 이해해야 하는 핵심 흐름이다. **“왜 이런 개념이 필요한가?”**를 중심으로 읽는다.
+
+## 가장 먼저 읽기: Algebra, σ-algebra, Borel Set
+
+### Step 1. 출발점: 왜 σ-algebra가 필요한가?
+
+확률론에서는 어떤 sample space
+
+$$
+\Omega
+$$
+
+가 있고, 그 안의 사건 $A$에 대해
+
+$$
+P(A)
+$$
+
+를 정의하고 싶다.
+
+유한한 경우에는 별문제가 없다. 예를 들어
+
+$$
+\Omega=\{1,2,3,4,5,6\}
+$$
+
+라면 모든 부분집합에 확률을 정의해도 된다.
+
+즉
+
+$$
+P:\mathcal P(\Omega)\to[0,1]
+$$
+
+로 두면 된다.
+
+여기서 $\mathcal P(\Omega)$는 $\Omega$의 모든 부분집합을 모은 **power set**이다.
+
+---
+
+### Step 2. 그런데 표본공간이 실수 전체이면 문제가 생긴다
+
+예를 들어
+
+$$
+X\sim U[0,1]
+$$
+
+이라면 자연스럽게
+
+$$
+P([0,0.5])=\frac12
+$$
+
+처럼 **구간의 길이 = 확률**로 생각하고 싶다.
+
+그리고 확률에는 적어도 다음과 같은 자연스러운 성질들이 있었으면 한다.
+
+서로소인 $A_1,A_2,\ldots$에 대해서
+
+$$
+P\left(\bigcup_{n=1}^{\infty}A_n\right)
+=
+\sum_{n=1}^{\infty}P(A_n).
+$$
+
+그런데 문제는
+
+$$
+\boxed{\mathbb R\text{의 모든 부분집합에 구간 길이와 양립하는 가산가법적 measure를 부여할 수 없다는 것}}
+$$
+
+이다.
+
+$\mathbb R$에는 Vitali set 같은 **non-measurable set**들이 존재하기 때문이다.
+
+따라서
+
+$$
+P:\mathcal P(\mathbb R)\to[0,1]
+$$
+
+로 구간 길이에 기반한 확률을 그냥 정의할 수 없다.
+
+---
+
+### Step 3. 해결책: 측정 가능한 집합들만 고르자
+
+그래서 발상을 바꾼다.
+
+> 모든 부분집합에 확률을 주지 말고,
+> **확률을 줄 수 있는 집합들만 골라서** 확률을 정의하자.
+
+즉
+
+$$
+\mathcal F\subseteq\mathcal P(\Omega)
+$$
+
+를 하나 고른다. 유한 표본공간에서는 등호가 가능하지만, 실수선에서 보렐 집합만 사용할 때는 진부분집합이다. 그런 다음
+
+$$
+P:\mathcal F\to[0,1]
+$$
+
+로 정의한다.
+
+여기서 $\mathcal F$는 **집합들을 모아놓은 집합**이다.
+
+이 층위를 반드시 구분해야 한다.
+
+예를 들어
+
+$$
+0.5\in(0,1)\in\mathcal F.
+$$
+
+즉
+
+$$
+\underbrace{0.5}_{\text{숫자}}
+\in
+\underbrace{(0,1)}_{\text{숫자들의 집합}}
+\in
+\underbrace{\mathcal F}_{\text{집합들의 집합}}.
+$$
+
+---
+
+### Step 4. 그런데 사건의 모음 F를 아무렇게나 고르면 안 된다
+
+예를 들어
+
+$$
+A\in\mathcal F
+$$
+
+인데
+
+$$
+A^c\notin\mathcal F
+$$
+
+이면 이상하다.
+
+$A$가 발생할 확률은 계산할 수 있는데
+
+> "$A$가 발생하지 않을 확률"
+
+은 계산할 수 없다는 뜻이기 때문이다.
+
+따라서 최소한
+
+$$
+A\in\mathcal F
+\Rightarrow
+A^c\in\mathcal F
+$$
+
+여야 한다.
+
+마찬가지로
+
+$$
+A_1,A_2,\ldots\in\mathcal F
+$$
+
+라면
+
+$$
+\bigcup_{n=1}^{\infty}A_n
+$$
+
+도 사건으로 다룰 수 있기를 원한다.
+
+따라서
+
+$$
+A_1,A_2,\ldots\in\mathcal F
+\Rightarrow
+\bigcup_{n=1}^{\infty}A_n\in\mathcal F.
+$$
+
+이런 구조가 바로 **$\sigma$-algebra**다.
+
+---
+
+### Step 5. Algebra vs σ-algebra
+
+#### Algebra
+
+$\mathcal A$가
+
+$$
+\Omega\in\mathcal A
+$$
+
+$$
+A\in\mathcal A\Rightarrow A^c\in\mathcal A
+$$
+
+그리고 **유한한 union**에 대해 닫혀 있으면 algebra다.
+
+$$
+A_1,\ldots,A_n\in\mathcal A
+\Rightarrow
+\bigcup_{i=1}^{n}A_i\in\mathcal A.
+$$
+
+#### σ-algebra
+
+여기서 조건을 더 강하게 만들어 **가산 개의 union**까지 허용한다.
+
+$$
+A_1,A_2,\ldots\in\mathcal F
+\Rightarrow
+\boxed{
+\bigcup_{n=1}^{\infty}A_n\in\mathcal F
+}
+$$
+
+따라서
+
+$$
+\boxed{
+\sigma\text{-algebra}
+\Rightarrow
+algebra
+}
+$$
+
+이다.
+
+핵심 차이는
+
+$$
+\boxed{
+\text{algebra: finite operations}
+\qquad
+\sigma\text{-algebra: countable operations}
+}
+$$
+
+이라고 기억하면 된다.
+
+---
+
+### Step 6. 이제 Borel σ-algebra
+
+이제 sample space를
+
+$$
+\Omega=\mathbb R
+$$
+
+이라고 하자.
+
+우리는 적어도
+
+$$
+(0,1),\quad
+(-3,5),\quad
+(100,200)
+$$
+
+같은 **open interval**에는 확률/measure를 부여할 수 있기를 원한다.
+
+그래서 일단 모든 open interval을 넣는다.
+
+그런데 open intervals만 모아놓은 것은 $\sigma$-algebra가 아니다.
+
+왜냐하면 예를 들어
+
+$$
+(0,1)
+$$
+
+을 넣었다면 $\sigma$-algebra의 조건상 complement인
+
+$$
+(0,1)^c
+=
+(-\infty,0]\cup[1,\infty)
+$$
+
+도 있어야 하는데 이것은 open interval이 아니기 때문이다.
+
+---
+
+### Step 7. 그래서 필요한 집합들을 계속 추가한다
+
+아이디어는 다음과 같다.
+
+> 모든 open interval을 출발점으로 넣는다.
+>
+> 그리고 $\sigma$-algebra가 되기 위해 필요한 집합들을 계속 추가한다.
+
+Complement도 추가하고,
+
+$$
+A\rightarrow A^c
+$$
+
+countable union도 추가하고,
+
+$$
+A_1,A_2,\ldots
+\rightarrow
+\bigcup_{n=1}^{\infty}A_n
+$$
+
+따라서 countable intersection도 추가한다.
+
+그러다 보면 closed interval 같은 것도 자연스럽게 생긴다.
+
+예를 들어
+
+$$
+[0,1]
+=
+\bigcap_{n=1}^{\infty}
+\left(-\frac1n,1+\frac1n\right).
+$$
+
+오른쪽은 전부 open intervals이다.
+
+따라서 open intervals를 포함하는 $\sigma$-algebra라면
+
+$$
+[0,1]
+$$
+
+도 반드시 포함해야 한다.
+
+---
+
+### Step 8. 그 결과가 Borel σ-algebra
+
+이 과정을 통해 만들어지는 **가장 작은 $\sigma$-algebra**가
+
+$$
+\boxed{\mathcal B(\mathbb R)}
+$$
+
+이다.
+
+즉
+
+$$
+\boxed{
+\mathcal B(\mathbb R)
+=
+\sigma(\text{open sets})
+}
+$$
+
+이다.
+
+말로 하면:
+
+> **모든 open set을 포함하면서 $\sigma$-algebra의 조건을 만족하도록 꼭 필요한 집합들을 추가해서 만든 가장 작은 $\sigma$-algebra.**
+
+여기서 **가장 작다**는 게 중요하다.
+
+---
+
+### Step 9. 왜 "가장 작은"이라고 하나?
+
+open sets를 포함하는 $\sigma$-algebra는 여러 개 존재할 수 있다.
+
+극단적으로
+
+$$
+\mathcal P(\mathbb R)
+$$
+
+은 $\mathbb R$의 모든 부분집합을 가지고 있으므로 당연히 모든 open set을 포함한다.
+
+하지만 너무 크다.
+
+우리는
+
+> open sets는 반드시 포함시키되, $\sigma$-algebra가 되기 위해 필요한 것들만 넣자.
+
+라고 하는 것이다.
+
+그 최소한의 결과가
+
+$$
+\mathcal B(\mathbb R)
+$$
+
+이다.
+
+---
+
+### Step 10. Borel set은 무엇인가?
+
+여기서 용어를 정확하게 구분하자.
+
+$$
+\mathcal B(\mathbb R)
+$$
+
+은 **Borel $\sigma$-algebra**다.
+
+그리고
+
+$$
+A\in\mathcal B(\mathbb R)
+$$
+
+이면 $A$를 **Borel set**이라고 한다.
+
+예를 들어
+
+$$
+(0,1)\in\mathcal B(\mathbb R)
+$$
+
+이므로 $(0,1)$은 Borel set이다.
+
+마찬가지로
+
+$$
+[0,1]\in\mathcal B(\mathbb R),
+$$
+
+$$
+\{3\}\in\mathcal B(\mathbb R),
+$$
+
+$$
+\mathbb Q\in\mathcal B(\mathbb R)
+$$
+
+등도 성립한다.
+
+즉
+
+$$
+\boxed{
+\text{Borel set}
+=
+\text{Borel }\sigma\text{-algebra의 원소}
+}
+$$
+
+이다.
+
+---
+
+### Step 11. Power set과 Borel σ-algebra의 차이
+
+이게 이번 내용에서 가장 중요한 그림이다.
+
+$$
+\boxed{
+\mathcal B(\mathbb R)
+\subsetneq
+\mathcal P(\mathbb R)
+}
+$$
+
+$\mathcal P(\mathbb R)$에는 **모든** 부분집합이 들어간다.
+
+반면 $\mathcal B(\mathbb R)$에는 open sets에서 출발하여 $\sigma$-algebra 연산으로 만들어지는 집합들이 들어간다.
+
+그래서 우리가 평소 만나는 대부분의 정상적인 집합은 Borel set이지만, 모든 subset이 Borel set인 것은 아니다.
+
+---
+
+### Step 12. 전체 구조
+
+결국 우리가 하고 싶은 것은
+
+$$
+\boxed{
+P:\mathcal F\rightarrow[0,1]
+}
+$$
+
+를 정의하는 것이다.
+
+그래서 확률공간을
+
+$$
+\boxed{
+(\Omega,\mathcal F,P)
+}
+$$
+
+라고 쓴다.
+
+각각의 의미는
+
+$$
+\boxed{
+\begin{aligned}
+\Omega
+&=\text{가능한 결과 전체}\\
+\mathcal F
+&=\text{확률을 물어볼 수 있는 사건들의 집합}\\
+P
+&=\text{그 사건에 확률을 부여하는 함수}
+\end{aligned}
+}
+$$
+
+이다.
+
+특히 $\Omega=\mathbb R$인 상황에서는 대표적으로
+
+$$
+\mathcal F=\mathcal B(\mathbb R)
+$$
+
+를 사용할 수 있다.
+
+---
+
+### 한 문장으로 압축
+
+지금 단계에서는 이것만 머리에 박혀 있으면 된다.
+
+$$
+\boxed{
+\begin{gathered}
+\mathbb R\text{의 모든 subset에 measure를 줄 수는 없다.}\\
+\Downarrow\\
+\text{measure를 줄 집합들만 골라놓자.}\\
+\Downarrow\\
+\text{그 집합들의 collection이 }\sigma\text{-algebra}.\\
+\Downarrow\\
+\mathbb R\text{의 open sets에서 출발해서 만든 최소 }\sigma\text{-algebra}\\
+=\boxed{\mathcal B(\mathbb R)}.\\
+\Downarrow\\
+\mathcal B(\mathbb R)\text{의 각 원소를 Borel set이라고 한다.}
+\end{gathered}
+}
+$$
+
+그리고 다음 단계가 **measurable function**이야. 여기서부터 $X:\Omega\to\mathbb R$라는 random variable이 왜
+
+$$
+X^{-1}(B)\in\mathcal F
+$$
+
+를 만족해야 하는지 보면, **$\sigma$-algebra → Borel set → random variable → CDF**가 하나의 논리로 연결된다.
+
+---
+
+## 자세한 학습 노트
+
 이 노트의 목적은 측도론 전체를 공부하는 것이 아니라, **확률론의 정의와 정리를 읽는 데 꼭 필요한 언어**를 먼저 익히는 것이다. 첫 회독에서는 증명의 세부 기교보다 다음 연결을 이해하는 데 집중하면 된다.
 
 | 측도론 | 확률론 |
