@@ -65,18 +65,11 @@ $$
 서로소인 $A_1,A_2,\ldots$에 대해서
 
 $$
-P\left(\bigcup_{n=1}^{\infty}A_n\right)
-=
-\sum_{n=1}^{\infty}P(A_n).
+P\left(\bigcup_{n=1}^{\infty}A_n\right) = \sum_{n=1}^{\infty}P(A_n).
 $$
 
-그런데 문제는
-
-$$
-\boxed{\mathbb R\text{의 모든 부분집합에 구간 길이와 양립하는 가산가법적 measure를 부여할 수 없다는 것}}
-$$
-
-이다.
+> [!WARNING]
+> **핵심 문제:** 실수의 모든 부분집합에 구간의 길이와 양립하는 가산가법적 측도를 부여할 수는 없다.
 
 $\mathbb R$에는 Vitali set 같은 **non-measurable set**들이 존재하기 때문이다.
 
@@ -218,34 +211,23 @@ $$
 여기서 조건을 더 강하게 만들어 **가산 개의 union**까지 허용한다.
 
 $$
-A_1,A_2,\ldots\in\mathcal F
-\Rightarrow
-\boxed{
-\bigcup_{n=1}^{\infty}A_n\in\mathcal F
-}
+A_1,A_2,\ldots\in\mathcal F \quad\Longrightarrow\quad \bigcup_{n=1}^{\infty}A_n\in\mathcal F
 $$
 
 따라서
 
 $$
-\boxed{
-\sigma\text{-algebra}
-\Rightarrow
-algebra
-}
+\sigma\text{-algebra} \quad\Longrightarrow\quad \text{algebra}
 $$
 
 이다.
 
 핵심 차이는
 
-$$
-\boxed{
-\text{algebra: finite operations}
-\qquad
-\sigma\text{-algebra: countable operations}
-}
-$$
+| 구조 | 허용하는 집합 연산 |
+|---|---|
+| algebra | 유한 번의 합집합과 교집합 |
+| σ-algebra | 가산 번의 합집합과 교집합 |
 
 이라고 기억하면 된다.
 
@@ -284,9 +266,7 @@ $$
 을 넣었다면 $\sigma$-algebra의 조건상 complement인
 
 $$
-(0,1)^c
-=
-(-\infty,0]\cup[1,\infty)
+(0,1)^c = (-\infty,0]\cup[1,\infty)
 $$
 
 도 있어야 하는데 이것은 open interval이 아니기 때문이다.
@@ -322,9 +302,7 @@ $$
 예를 들어
 
 $$
-[0,1]
-=
-\bigcap_{n=1}^{\infty}
+[0,1] = \bigcap_{n=1}^{\infty}
 \left(-\frac1n,1+\frac1n\right).
 $$
 
@@ -345,7 +323,7 @@ $$
 이 과정을 통해 만들어지는 **가장 작은 $\sigma$-algebra**가
 
 $$
-\boxed{\mathcal B(\mathbb R)}
+\mathcal B(\mathbb R)
 $$
 
 이다.
@@ -353,11 +331,7 @@ $$
 즉
 
 $$
-\boxed{
-\mathcal B(\mathbb R)
-=
-\sigma(\text{open sets})
-}
+\mathcal B(\mathbb R)=\sigma(\text{open sets})
 $$
 
 이다.
@@ -444,13 +418,7 @@ $$
 
 즉
 
-$$
-\boxed{
-\text{Borel set}
-=
-\text{Borel }\sigma\text{-algebra의 원소}
-}
-$$
+> **Borel set = Borel σ-algebra의 원소**
 
 이다.
 
@@ -461,11 +429,7 @@ $$
 이게 이번 내용에서 가장 중요한 그림이다.
 
 $$
-\boxed{
-\mathcal B(\mathbb R)
-\subsetneq
-\mathcal P(\mathbb R)
-}
+\mathcal B(\mathbb R)\subsetneq\mathcal P(\mathbb R)
 $$
 
 $\mathcal P(\mathbb R)$에는 **모든** 부분집합이 들어간다.
@@ -481,9 +445,7 @@ $\mathcal P(\mathbb R)$에는 **모든** 부분집합이 들어간다.
 결국 우리가 하고 싶은 것은
 
 $$
-\boxed{
-P:\mathcal F\rightarrow[0,1]
-}
+P:\mathcal F\longrightarrow[0,1]
 $$
 
 를 정의하는 것이다.
@@ -491,29 +453,18 @@ $$
 그래서 확률공간을
 
 $$
-\boxed{
 (\Omega,\mathcal F,P)
-}
 $$
 
 라고 쓴다.
 
-각각의 의미는
+각각의 의미는 다음과 같다.
 
-$$
-\boxed{
-\begin{aligned}
-\Omega
-&=\text{가능한 결과 전체}\\
-\mathcal F
-&=\text{확률을 물어볼 수 있는 사건들의 집합}\\
-P
-&=\text{그 사건에 확률을 부여하는 함수}
-\end{aligned}
-}
-$$
-
-이다.
+| 기호 | 의미 |
+|---|---|
+| $\Omega$ | 가능한 결과 전체 |
+| $\mathcal F$ | 확률을 물어볼 수 있는 사건들의 집합 |
+| $P$ | 사건에 확률을 부여하는 함수 |
 
 특히 $\Omega=\mathbb R$인 상황에서는 대표적으로
 
@@ -529,24 +480,16 @@ $$
 
 지금 단계에서는 이것만 머리에 박혀 있으면 된다.
 
-$$
-\boxed{
-\begin{gathered}
-\mathbb R\text{의 모든 subset에 measure를 줄 수는 없다.}\\
-\Downarrow\\
-\text{measure를 줄 집합들만 골라놓자.}\\
-\Downarrow\\
-\text{그 집합들의 collection이 }\sigma\text{-algebra}.\\
-\Downarrow\\
-\mathbb R\text{의 open sets에서 출발해서 만든 최소 }\sigma\text{-algebra}\\
-=\boxed{\mathcal B(\mathbb R)}.\\
-\Downarrow\\
-\mathcal B(\mathbb R)\text{의 각 원소를 Borel set이라고 한다.}
-\end{gathered}
-}
-$$
+| 순서 | 핵심 흐름 |
+|---:|---|
+| 1 | 실수의 모든 부분집합에 구간 길이와 양립하는 측도를 줄 수는 없다. |
+| ↓ | 측도를 줄 수 있는 집합들만 고른다. |
+| 2 | 그 집합들의 모음이 σ-algebra다. |
+| ↓ | 실수의 열린집합에서 출발해 가장 작은 σ-algebra를 만든다. |
+| 3 | 그 결과가 $\mathcal B(\mathbb R)$이다. |
+| 4 | $\mathcal B(\mathbb R)$의 각 원소를 Borel set이라고 한다. |
 
-그리고 다음 단계가 **measurable function**이야. 여기서부터 $X:\Omega\to\mathbb R$라는 random variable이 왜
+그리고 다음 단계가 **measurable function**이다. 여기서부터 $X:\Omega\to\mathbb R$라는 random variable이 왜
 
 $$
 X^{-1}(B)\in\mathcal F
